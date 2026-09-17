@@ -1,5 +1,5 @@
 name = "miaoli_like"
-version = "0.1.0"
+version = "0.1.1"
 main = "main.py"
 author = "超可爱乃依"
 description = "为喵璃提供用户点赞的服务扩展"

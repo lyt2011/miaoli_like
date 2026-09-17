@@ -63,13 +63,16 @@ class MiaoLiLike(NcatBotPlugin):
 		
 		return like_result
 	
-	@registrar.on_command("赞我")
+	@registrar.on_command("赞我", priority=100)
 	async def on_like_command(self, event: MessageEvent) -> None:
 	
 		"""
 		先计算 "以最大数量给用户点赞，需要多少次" 与 "还剩下多少次"
 		然后根据结果 先 for 循环点赞固定次数 然后单独点赞剩下的次数
 		"""
+		
+		# 停止事件继续传播
+		event.data._propagation_stopped = True
 		
 		self.logger.info(f"{event.user_id} 触发点赞")
 		
